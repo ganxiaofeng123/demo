@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">weather_forecast</string>
+    <dimen name="dimen50">50dp</dimen>
+    <dimen name="dimen10">10dp</dimen>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <style name="weather_text_main">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>
