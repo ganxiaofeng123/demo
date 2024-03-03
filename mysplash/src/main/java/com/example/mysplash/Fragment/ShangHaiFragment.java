@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.example.mysplash.base.BaseFragment;
 import com.example.mysplash.databinding.FragmentShanghaiBinding;
+import com.google.android.material.appbar.AppBarLayout;
 
 public class ShangHaiFragment extends BaseFragment<FragmentShanghaiBinding> {
     @Override
@@ -20,5 +21,15 @@ public class ShangHaiFragment extends BaseFragment<FragmentShanghaiBinding> {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getBinding().shanghaiAppBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (-verticalOffset<appBarLayout.getMeasuredHeight()/2){
+                    getBinding().shanghaiWelcome.setVisibility(View.GONE);
+                }else {
+                    getBinding().shanghaiWelcome.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 }
