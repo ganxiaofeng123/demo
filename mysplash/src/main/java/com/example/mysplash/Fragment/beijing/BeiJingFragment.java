@@ -1,4 +1,4 @@
-package com.example.mysplash.Fragment;
+package com.example.mysplash.Fragment.beijing;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,12 +10,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.mysplash.base.BaseFragment;
-import com.example.mysplash.databinding.FragmentShenzhenBinding;
+import com.example.mysplash.databinding.FragmentBeijingBinding;
 
-public class ShengZhenFragment extends BaseFragment<FragmentShenzhenBinding> {
+public class BeiJingFragment extends BaseFragment<FragmentBeijingBinding> {
     @Override
-    protected FragmentShenzhenBinding onCreateViewBinding(@NonNull LayoutInflater inflater, @Nullable ViewGroup parent) {
-        return FragmentShenzhenBinding.inflate(inflater,parent,false);
+    protected FragmentBeijingBinding onCreateViewBinding(@NonNull LayoutInflater inflater, @Nullable ViewGroup parent) {
+        return FragmentBeijingBinding.inflate(inflater,parent,false);
     }
 
     @Override

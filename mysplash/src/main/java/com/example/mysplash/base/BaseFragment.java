@@ -15,6 +15,7 @@ import com.example.mysplash.mvp.view.LifeCircleMvpFragment;
 
 public  abstract  class BaseFragment<T extends ViewBinding> extends LifeCircleMvpFragment {
         private T binding;
+        protected Context context;
 
         @Nullable
         @Override

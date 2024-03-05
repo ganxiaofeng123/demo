@@ -3,10 +3,10 @@ package com.example.mysplash.main;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.mysplash.Fragment.BeiJingFragment;
-import com.example.mysplash.Fragment.HangZhouFragment;
-import com.example.mysplash.Fragment.ShangHaiFragment;
-import com.example.mysplash.Fragment.ShengZhenFragment;
+import com.example.mysplash.Fragment.beijing.BeiJingFragment;
+import com.example.mysplash.Fragment.hangzhou.HangZhouFragment;
+import com.example.mysplash.Fragment.shanghai.ShangHaiFragment;
+import com.example.mysplash.Fragment.shenzhen.ShengZhenFragment;
 import com.example.mysplash.R;
 import com.example.mysplash.base.BaseMvpPresenter;
 
