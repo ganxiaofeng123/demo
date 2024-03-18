@@ -1,6 +1,5 @@
 package com.example.mysplash.Fragment.shanghai;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +14,6 @@ import com.example.mysplash.base.BaseFragment;
 import com.example.mysplash.databinding.FragmentShanghaiBinding;
 import com.google.android.material.appbar.AppBarLayout;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class ShangHaiFragment extends BaseFragment<FragmentShanghaiBinding> {
 
@@ -37,7 +33,7 @@ public class ShangHaiFragment extends BaseFragment<FragmentShanghaiBinding> {
 
     private void initRecyclerview() {
         getBinding().shanghaiRecyclerview.setLayoutManager(new LinearLayoutManager(context));
-        getBinding().shanghaiRecyclerview.setAdapter(new ShangHaiAdapter(context, shanghaiDataManager.getData()));
+        getBinding().shanghaiRecyclerview.setAdapter(new ShangHaiAdapter(context, shanghaiDataManager.getData(),false));
     }
 
     private void initListener() {

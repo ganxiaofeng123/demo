@@ -14,9 +14,8 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "demo"
-include ':app'
-include ':myedittext'
-include ':mybutton'
-include ':myimageview'
 include ':mysplash'
 include ':weather_forecast'
+include ':mvp'
+include ':http'
+include ':task'

@@ -1,6 +1,6 @@
 package com.example.mysplash.base;
 
-import android.content.Context;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,14 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 
-import com.example.mysplash.mvp.view.LifeCircleMvpFragment;
+import com.example.mvp.view.LifeCircleMvpFragment;
 
 
 public  abstract  class BaseFragment<T extends ViewBinding> extends LifeCircleMvpFragment {
         private T binding;
-        protected Context context;
+        protected Activity context;
 
-        @Nullable
+    @Override
+    public void onAttach(@NonNull Activity context) {
+        super.onAttach(context);
+        this.context = context;
+    }
+
+    @Nullable
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             // 调用onCreateViewBinding方法获取binding

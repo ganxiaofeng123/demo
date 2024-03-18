@@ -34,6 +34,7 @@ public class shanghaiDataManager {
         ArrayList<ShangHaiBean> data = new ArrayList<>();
         data.add(new ShangHaiBean().setData(getHorData(10)).setmItemType(ShangHaiBean.IShangHaiItemType.HORIZANTAL));
         data.addAll(getVerData(10));
+        data.add(new ShangHaiBean().setData(getHorData(10)).setmItemType(ShangHaiBean.IShangHaiItemType.HORIZANTAL));
         return data;
     }
 }

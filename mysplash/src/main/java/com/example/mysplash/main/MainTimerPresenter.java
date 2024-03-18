@@ -8,7 +8,7 @@ import com.example.mysplash.Fragment.hangzhou.HangZhouFragment;
 import com.example.mysplash.Fragment.shanghai.ShangHaiFragment;
 import com.example.mysplash.Fragment.shenzhen.ShengZhenFragment;
 import com.example.mysplash.R;
-import com.example.mysplash.base.BaseMvpPresenter;
+import com.example.mvp.base.BaseMvpPresenter;
 
 /**
  * Created by anson on 2018/11/11.

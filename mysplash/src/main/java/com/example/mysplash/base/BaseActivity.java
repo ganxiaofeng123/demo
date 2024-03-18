@@ -1,12 +1,10 @@
 package com.example.mysplash.base;
 
 import android.os.Bundle;
-import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.example.mysplash.mvp.view.LifeCircleMvpActivity;
+import com.example.mvp.view.LifeCircleMvpActivity;
 
 public abstract class BaseActivity<VB extends ViewBinding> extends LifeCircleMvpActivity {
 

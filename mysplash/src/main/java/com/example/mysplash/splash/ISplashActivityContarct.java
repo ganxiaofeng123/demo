@@ -1,9 +1,8 @@
 package com.example.mysplash.splash;
 
-import com.example.mysplash.mvp.ILifeCircle;
-import com.example.mysplash.mvp.IMvpView;
-import com.example.mysplash.mvp.MvpControler;
-
+import com.example.mvp.ILifeCircle;
+import com.example.mvp.IMvpView;
+import com.example.mvp.MvpControler;
 public interface ISplashActivityContarct {
     interface iview extends IMvpView {
         void setTimer(String s);

@@ -2,8 +2,8 @@ package com.example.mysplash.splash;
 
 import android.util.Log;
 
-import com.example.mysplash.base.BaseMvpPresenter;
-
+import com.example.mvp.base.BaseMvpPresenter;
+//具体中介者
 public class SplashTimerPresenter extends BaseMvpPresenter<ISplashActivityContarct.iview> implements ISplashActivityContarct.ipresenter {
     private Splash timer;
 

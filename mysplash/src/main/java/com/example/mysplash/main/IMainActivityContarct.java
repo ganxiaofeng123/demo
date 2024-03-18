@@ -2,9 +2,9 @@ package com.example.mysplash.main;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.mysplash.mvp.ILifeCircle;
-import com.example.mysplash.mvp.IMvpView;
-import com.example.mysplash.mvp.MvpControler;
+import com.example.mvp.ILifeCircle;
+import com.example.mvp.IMvpView;
+import com.example.mvp.MvpControler;
 
 public interface IMainActivityContarct {
     interface iview extends IMvpView {
