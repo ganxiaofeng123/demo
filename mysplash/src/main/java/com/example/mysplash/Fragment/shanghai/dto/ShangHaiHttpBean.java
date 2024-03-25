@@ -22,12 +22,12 @@ import java.util.ArrayList;
 public class ShangHaiHttpBean {
      public int error_code;
     public String reason;
-    protected XiaoHuaListBean result;
+    public XiaoHuaListBean result;
     public static class XiaoHuaListBean{
-        ArrayList<XiaoHuaBean> data;
+        public ArrayList<XiaoHuaBean> data;
     }
     public static class XiaoHuaBean{
-        String content;
+        public String content;
         String hashId;
         int unixtime;
         String updatetime;

@@ -16,6 +16,7 @@ import androidx.core.view.ViewCompat;
 
 
 import com.example.mysplash.Fragment.shanghai.IShangHaiContarct;
+import com.example.mysplash.Fragment.shanghai.dto.ShangHaiHttpBean;
 import com.example.mysplash.Fragment.shanghai.shanghaiDetailPresenter;
 import com.example.mysplash.base.BaseActivity;
 import com.example.mysplash.databinding.ActivityShanghaiDetailBinding;
@@ -42,7 +43,7 @@ public class shanghaiDetailActivity extends BaseActivity<ActivityShanghaiDetailB
     protected void afterBindingView() {
         initAnima();
         //getOkhttp();
-        intGetNetData();
+        //intGetNetData();
         //iniPostNetData();
     }
 
@@ -65,7 +66,7 @@ public class shanghaiDetailActivity extends BaseActivity<ActivityShanghaiDetailB
 //    }
 
     private void intGetNetData() {
-        ipresenter.getNetData();
+        ipresenter.getNetData(1);
         //创建对象
         //Object desc = new ShangHaiDetailHttpTask().getXiaoHuaList("desc","1","2");
 //        GetXiaoHuaTask task = new GetXiaoHuaTask();
@@ -144,5 +145,10 @@ public class shanghaiDetailActivity extends BaseActivity<ActivityShanghaiDetailB
             ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(activity,pair);
             ActivityCompat.startActivity(activity,intent,optionsCompat.toBundle());
         }
+    }
+
+    @Override
+    public void showData(ShangHaiHttpBean data) {
+
     }
 }

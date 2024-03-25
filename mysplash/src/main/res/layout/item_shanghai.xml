@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="horizontal"
     >
     <ImageView
         android:id="@+id/item_shanghai_iv"
@@ -11,11 +12,15 @@
         android:scaleType="centerCrop"
         ></ImageView>
     <TextView
+        android:maxLines="2"
+        android:ellipsize="end"
         android:id="@+id/item_tv"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
-        android:text=""
         android:gravity="center"
         android:background="@color/color_ADADAD"></TextView>
-
+<View
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_10"
+    />
 </LinearLayout>

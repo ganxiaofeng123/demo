@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.mysplash.Adapter.shanghai.ShangHaiAdapter;
 import com.example.mysplash.Fragment.shanghai.dto.shanghaiDataManager;
 import com.example.mysplash.base.BaseFragment;
 import com.example.mysplash.databinding.FragmentShanghaiBinding;

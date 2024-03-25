@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--自定义View通过xml文件来获取一些属性值-->
+<resources>
+    <declare-styleable name="JiKeLikeView">
+        <attr name="is_Like" format="boolean"/>
+    </declare-styleable>
+</resources>

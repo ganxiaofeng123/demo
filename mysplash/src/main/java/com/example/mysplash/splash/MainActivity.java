@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.example.mysplash.main.MainActivity2;
+import com.example.mysplash.splash.main.MainActivity2;
 import com.example.mysplash.R;
 import com.example.mysplash.databinding.ActivitySplashBinding;
 import com.example.mysplash.base.BaseActivity;

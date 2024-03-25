@@ -1,4 +1,4 @@
-package com.example.mysplash.main;
+package com.example.mysplash.splash.main;
 
 
 import androidx.fragment.app.Fragment;

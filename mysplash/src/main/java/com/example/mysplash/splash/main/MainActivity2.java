@@ -1,9 +1,10 @@
-package com.example.mysplash.main;
+package com.example.mysplash.splash.main;
 
 import android.annotation.SuppressLint;
-import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RadioGroup;
@@ -13,10 +14,10 @@ import androidx.fragment.app.Fragment;
 import com.example.mysplash.R;
 import com.example.mysplash.databinding.ActivityMain2Binding;
 import com.example.mysplash.base.BaseActivity;
-import com.example.mysplash.main.tools.MainConstantTool;
+import com.example.mysplash.splash.main.tools.MainConstantTool;
 
 //@ViewInject(mainidbind = R.layout.activity_main2)
-public class MainActivity2 extends BaseActivity<ActivityMain2Binding> implements IMainActivityContarct.iview{
+public class MainActivity2 extends BaseActivity<ActivityMain2Binding> implements IMainActivityContarct.iview, View.OnClickListener {
 
    /* @BindView(R.id.fl_Buttom)
     FloatingActionButton flButtom;
@@ -64,8 +65,10 @@ public class MainActivity2 extends BaseActivity<ActivityMain2Binding> implements
     }
     //左右视图切换
     private void initCheckListener() {
-        viewBinding.rlButtonShanghai.setChecked(true);
-        viewBinding.rgMainTab.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        viewBinding.rlButtonShanghai.playAnimation();
+        viewBinding.rlButtonShanghai.setOnClickListener(this);
+        viewBinding.rlButtonHangzhou.setOnClickListener(this);
+        /*viewBinding.rgMainTab.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @SuppressLint("NonConstantResourceId")
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
@@ -81,7 +84,7 @@ public class MainActivity2 extends BaseActivity<ActivityMain2Binding> implements
                         break;
                 }
             }
-        });
+        });*/
 
         viewBinding.rgMainBottom.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @SuppressLint("NonConstantResourceId")
@@ -106,10 +109,10 @@ public class MainActivity2 extends BaseActivity<ActivityMain2Binding> implements
     private void handleBottomPosition() {
         if (ipresenter.getTopPosition() !=MainConstantTool.HANGZHOU) {
             ipresenter.replaceFragment(MainConstantTool.SHANGHAI);
-            viewBinding.rlButtonShanghai.setChecked(true);
+            viewBinding.rlButtonShanghai.playAnimation();
         }else{
            ipresenter.replaceFragment(MainConstantTool.HANGZHOU);
-           viewBinding.rlButtonHangzhou.setChecked(true);
+           viewBinding.rlButtonHangzhou.playAnimation();
         }
     }
 
@@ -130,7 +133,7 @@ public class MainActivity2 extends BaseActivity<ActivityMain2Binding> implements
     }
 
 
-    private void changeAnime(RadioGroup gone,RadioGroup show) {
+    private void changeAnime(ViewGroup gone, ViewGroup show) {
         //消失的动画
        gone.clearAnimation();//清楚自身动画
         Animation animationGone=AnimationUtils.loadAnimation(this,R.anim.main_tab_tranlate_hide);
@@ -156,5 +159,32 @@ public class MainActivity2 extends BaseActivity<ActivityMain2Binding> implements
     @Override
     public void hideFragment(Fragment mfragment) {
         getSupportFragmentManager().beginTransaction().hide(mfragment).commit();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.rl_button_shanghai:
+                if (v.getId() == ipresenter.getCurrentCheckedId()) {
+                    return;
+                }
+                viewBinding.rlButtonShanghai.playAnimation();
+                ipresenter.replaceFragment(MainConstantTool.SHANGHAI);
+                viewBinding.rlButtonHangzhou.reverseAnimation();
+                break;
+            case R.id.rl_button_hangzhou:
+                if (v.getId() == ipresenter.getCurrentCheckedId()) {
+                    return;
+                }
+                viewBinding.rlButtonHangzhou.playAnimation();
+                ipresenter.replaceFragment(MainConstantTool.HANGZHOU);
+                viewBinding.rlButtonShanghai.reverseAnimation();
+                break;
+        }
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
     }
 }

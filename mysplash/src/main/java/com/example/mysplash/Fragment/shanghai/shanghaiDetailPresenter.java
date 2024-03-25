@@ -21,7 +21,7 @@ public class shanghaiDetailPresenter extends BasePresenter<IShangHaiContarct.ivi
     }
 
     @Override
-    public void getNetData() {
+    public void getNetData(int pagesize) {
         /*
         架构师的必要条件
         1.合理运用继承关系
@@ -34,16 +34,17 @@ public class shanghaiDetailPresenter extends BasePresenter<IShangHaiContarct.ivi
                        @Override
                        //运行于子线程
                        public IResult<ShangHaiHttpBean> onBackground() {
-                           return new ShangHaiDetailHttpTask<ShangHaiHttpBean>().getXiaoHuaList("desc","1","2");
+                           return new ShangHaiDetailHttpTask<ShangHaiHttpBean>().getXiaoHuaList("desc","1",pagesize+"");
                        }
                 //回调到主线程
                 //获取请求结果
                        @Override
                        public void onSuccess(IResult<ShangHaiHttpBean> t) {
                            ShangHaiHttpBean data = t.data();
-                           Gson gson = new Gson();
+                         /*  Gson gson = new Gson();
                            String s = gson.toJson(data);
-                           Log.e("getNetData",s);
+                           Log.e("getNetData",s);*/
+                           getView().showData(data);
                        }
                        //回调到主线程
             //获取请求结果

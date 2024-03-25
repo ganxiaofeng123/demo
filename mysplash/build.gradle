@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+    //动画库的依赖
+    implementation "com.airbnb.android:lottie:2.2.5"
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -41,6 +43,7 @@ dependencies {
     implementation project(path: ':mvp')
     implementation project(path: ':http')
     implementation project(path: ':task')
+    implementation project(path: ':refresh')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

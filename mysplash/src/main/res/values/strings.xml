@@ -5,4 +5,5 @@
     <string name="str_main_beijing">北京</string>
     <string name="str_main_shenzhen">深圳</string>
     <string name="image">shanghaiDetailActivity</string>
+    <string name="show_bottom">com.example.mysplash.Fragment.design.BottomShowBehavior</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.mysplash.splash;
 
 import android.os.Handler;
+import android.os.Looper;
 
 //1、时时去回调 这个时候是什么时间 倒计时到几秒  观察者设计模式
 //2、支持动态传入总时间
@@ -14,7 +15,7 @@ public class Splash implements Runnable{
     public boolean isRun;
     //构造方法
     public Splash(int time, ICountDownHandler countDownHandlder){
-        handler = new Handler();
+        handler = new Handler(Looper.getMainLooper());
         this.time=time;
         this.countDowntime=time;
         this.countDownHandler=countDownHandlder;

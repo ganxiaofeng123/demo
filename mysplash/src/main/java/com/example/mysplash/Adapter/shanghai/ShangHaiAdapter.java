@@ -1,15 +1,12 @@
-package com.example.mysplash.Fragment.shanghai;
+package com.example.mysplash.Adapter.shanghai;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -65,7 +62,7 @@ public class ShangHaiAdapter extends RecyclerView.Adapter {
         if (holder instanceof ShanghaiViewHolder){
             ((ShanghaiViewHolder) holder).tv.setText(bean.getMdec());
             ((ShanghaiViewHolder) holder).iv.setVisibility(bean.isShowImg()?View.VISIBLE:View.GONE);
-            holder.itemView.setTag(position);
+            //holder.itemView.setTag(position);
 
         } else if (holder instanceof ShanghaiViewHolderRv) {
             ((ShanghaiViewHolderRv) holder).recyclerView.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.HORIZONTAL,false));
