@@ -1,0 +1,1 @@
+#实现跨进程之间的通信，Boroadcast 与ContentProvider
