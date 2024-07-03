@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.mysplash.Fragment.shanghai.Activity.shanghaiDetailActivity;
 import com.example.mysplash.base.BaseFragment;
 import com.example.mysplash.databinding.FragmentBeijingBinding;
 
@@ -21,5 +22,15 @@ public class BeiJingFragment extends BaseFragment<FragmentBeijingBinding> {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initListener();
+    }
+
+    private void initListener() {
+        getBinding().rlButtonBeijing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shanghaiDetailActivity.start_5_0(getActivity(),getBinding().rlButtonBeijing);
+            }
+        });
     }
 }

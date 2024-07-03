@@ -15,6 +15,10 @@ import androidx.core.util.Pair;
 import androidx.core.view.ViewCompat;
 
 
+import com.example.ipc.CallBack;
+import com.example.ipc.IpcManager;
+import com.example.ipc.request.IpcRequest;
+import com.example.ipc.result.IResult;
 import com.example.mysplash.Fragment.shanghai.IShangHaiContarct;
 import com.example.mysplash.Fragment.shanghai.dto.ShangHaiHttpBean;
 import com.example.mysplash.Fragment.shanghai.shanghaiDetailPresenter;
@@ -45,6 +49,18 @@ public class shanghaiDetailActivity extends BaseActivity<ActivityShanghaiDetailB
         //getOkhttp();
         //intGetNetData();
         //iniPostNetData();
+        initIPC();
+    }
+
+    private void initIPC() {
+        IpcRequest ipcRequest = new IpcRequest("shanghai_detail");
+        IpcManager.getInstance(this).excuteAsync(ipcRequest, new CallBack() {
+            @Override
+            public void callBack(IResult iResult) {
+                String data = iResult.data();
+                Log.e("-----data----",data);
+            }
+        });
     }
 
 //    private void iniPostNetData() {
